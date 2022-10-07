@@ -3,14 +3,19 @@ h2,
 h3,
 h4,
 h5,
-h6{
+h6,
+.forbidden{
     text-align: center;
     margin-top:10px;
     margin-bottom:10px;
     color: #212529;
 }
+#daily{
+    color: #2d8cff;
+}
 #logo-daily,
-#question-delete{
+#question-delete,
+.forbidden h1{
     color: red;
 }
 #log-in-icon{
@@ -33,7 +38,7 @@ h6{
 
 #confirm-del{
     padding: 10px;
-    margin: 0px auto;
+    margin: auto !important;
     border-radius: 5px;
     text-align: center;
 }
