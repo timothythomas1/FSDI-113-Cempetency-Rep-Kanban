@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Details
+{% endblock title %}
+
+{% block content %}
+    <div class="post-detail">
+        <h1 id="title">{{ issue.title }}</h1>
+        <h4 id="subtitle" class="card-subtitle mb-2 text-muted">{{ issue.summary }}</h4>
+        <strong id="author">AUTHOR: {{ issue.author }} | CREATED ON: {{ issue.created_on }}</strong>
+        <p id="body">{{ issue.description }}</p>
+        {% if user == issue.author %}
+            <div class="author-options">
+                <a href="{% url 'confirm_delete' post.id %}" class="card-link btn btn-danger btn-sm"><i class="fa-solid fa-dumpster"></i></a>
+                <a href="{% url 'edit' post.id %}" class="card-link btn btn-success btn-sm"><i class="fa-regular fa-pen-to-square"></i></a>
+            </div>
+        {% endif %}
+    </div>
+{% endblock content %}

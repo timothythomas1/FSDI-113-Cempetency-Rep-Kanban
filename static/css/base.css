@@ -1,0 +1,74 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    text-align: center;
+    margin-top:10px;
+    margin-bottom:10px;
+    color: #212529;
+}
+#logo-daily,
+#question-delete{
+    color: red;
+}
+#log-in-icon{
+    margin-left: 10px;
+}
+.box{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px;
+}
+
+#id_title,
+#id_subtitle,
+#id_author,
+#id_body, 
+#create-post {
+    padding: 5px;
+    margin: 0px auto;
+    width: 100%;
+    border-radius: 5px;
+}
+
+#confirm-del{
+    padding: 10px;
+    margin: 0px auto;
+    border-radius: 5px;
+    text-align: center;
+}
+#confirm-del-btn {
+    font-size: xx-large;
+    padding: 5px;
+    margin: 0px auto;
+    border-radius: 5px;
+    text-align: center;
+    width: 250px;
+}
+
+#id_post-container{
+    width: 50%;
+    align-items: center;
+    text-align: center;
+}
+
+#update-post-btn{
+    width: 100%;
+
+}
+
+.author-options,
+#post-more {
+    text-align: right;
+}
+.post-detail{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Used for titles of posts */
+h5 {
+    margin-bottom: 10px;
+}
