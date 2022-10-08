@@ -1,5 +1,5 @@
 venv
-.env
 *__pycache__*
+.env
 staticfiles
-db.sqlite3
+heroku_config.sh
