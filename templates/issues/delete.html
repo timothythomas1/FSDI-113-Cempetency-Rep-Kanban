@@ -6,15 +6,18 @@
 
 {% block content %}
     <div id="update-container">
+        <h1>Delete task:</h1>
         <h2>'{{ issue.title }}' <span id="question-delete">?</span></h2>
         <h4>Assigned to {{ issue.assignee }}</h4>
-        <form method="POST">
+        <form method="POST" id="confirm-del-btn">
             {% csrf_token %}
             {{ form.as_p }}
-            <button id="confirm-del" type="submit" class="btn btn-danger btn-lg">
-                Confirm 
-                <i class="fa-solid fa-dumpster-fire"></i>
-            </button>
+            <div>
+                <button id="confirm-del-btn" type="submit" class="btn btn-danger btn-lg">
+                    Confirm
+                    <i class="fa-solid fa-dumpster-fire"></i>
+                </button>
+            </div>
         </form>
     </div>
 {% endblock content %}  

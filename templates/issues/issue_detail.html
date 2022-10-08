@@ -9,7 +9,7 @@
         <h1 id="title">{{ issue.title }}</h1>
         <h4 id="subtitle" class="card-subtitle mb-2 text-muted">{{ issue.summary }}</h4>
         <div id="author">
-        <div><strong>Initiated by:</strong> {{ issue.requester }} <strong>On:{{ issue.created_on }}</strong></div>
+        <div><strong>Initiated by:</strong> {{ issue.requester }} <strong>On:</strong> {{ issue.created_on }}</div>
         <strong>Delegated to:</strong>  {{ issue.assignee }}
         <p id="body">{{ issue.description }}</p>
         <div class="author-options">

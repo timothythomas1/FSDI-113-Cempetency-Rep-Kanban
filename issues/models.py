@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.urls import reverse
 
+
 # Create your models here.
 class Status(models.Model):
     name = models.CharField(max_length=256)
@@ -20,7 +21,6 @@ class Impact(models.Model):
 class Urgency(models.Model):
     name = models.CharField(max_length=256)
     description = models.TextField()
-
     def __str__(self):
         return self.name
 
@@ -31,6 +31,12 @@ class Issue(models.Model):
     title = models.CharField(max_length=256)
     summary = models.CharField(max_length=512)
     description = models.TextField()
+    created_on = models.DateTimeField(
+        auto_now_add=True,
+        null=True, 
+        blank=True
+    )
+    # created_on = models.DateTimeField(default=datetime.now)
     status = models.ForeignKey(
         Status, 
         on_delete=models.CASCADE
