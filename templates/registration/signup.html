@@ -5,13 +5,14 @@
 {% endblock title %}
 
 {% block content %}
-    <div class="container">
+    <div class=" container sign-up">
         <h1>Sign Up</h1>
         <form method="POST">
             {% csrf_token %}
             {{ form.as_p }}
-            <input type="submit" value="Sign Up" class="btn btn-success btn-lg" id="create-post">
+            <input type="submit" value="Sign Up" class="btn btn-dark btn-lg create-post">
         </form>
+        <br>
         Already have an account?
         <a href="{% url 'login' %}">Login</a>
     </div>

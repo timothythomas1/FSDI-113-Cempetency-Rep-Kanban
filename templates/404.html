@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Not Found
+{% endblock title %}
+
+{% block content %}
+    <div class="not-found">
+        <h1>Not Found (404)</h1>
+        <p>Nothing here...</p>
+        <a href="{% url 'list' %}">Click here</a> to go back to all posts.
+    </div>
+{% endblock content %}

@@ -33,10 +33,11 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" aria-current="page" href="{% url 'new' %}">Create Issue</a></li>
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'my_issued_list' %}">My Issued</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" aria-current="page" href="#"><strong>Admin </strong></a></li>
-                            <li><a class="dropdown-item" aria-current="page" href="#">Password Change</a></li>
-                            <li><a class="dropdown-item" href="#">Log Out</a></li>
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'admin:index' %}"><strong>Admin </strong></a></li>
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'password_change' %}">Password Change</a></li>
+                            <li><a class="dropdown-item" href="{% url 'logout' %}">Log Out</a></li>
                         </ul>
                     </li>
                     {% endif %} 
@@ -56,9 +57,9 @@
                 </form>
                 {% if user.is_authenticated %}
                 {% else %}
-                <div class="author-options">
+                <div class="">
                     <a id="log-in-icon" 
-                       href="#" 
+                       href="{% url 'login' %}" 
                        class="card-link btn btn-primary btn-md active"
                     >
                         <i class="fa-solid fa-arrow-right-to-bracket"></i>

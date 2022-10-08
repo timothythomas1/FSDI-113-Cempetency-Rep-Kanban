@@ -6,30 +6,45 @@
 
 {% block content %}
 <ul>
-    <h1>All Issues</h1>
+    <h1>All Tasks</h1>
+    
     {% for issue in issue_list %}
+
+
     <div class="card box">
+        <div id="status"><strong>({{ issue.status }})</strong></div>
         <div class="card-body">
             <h4 class="card-title">{{ issue.title }}</h4>
             <h6 class="card-subtitle mb-2 text-muted">{{ issue.summary }}</h6>
+            <hr>
+            <div><strong>Created by:</strong> {{ issue.requester }} <strong>On:</strong> {{ issue.created_on }}</div>
+            <strong>Assigned to:</strong>  {{ issue.assignee }}
+            <p></p>
             <p class="card-text">{{ issue.description|truncatechars:350 }}</p> {# There are more filters out there! #}
-            <div class="author-options">
-                {% if user == issue.requester %}
-                <a href="{% url 'delete' issue.id %}" class="card-link btn btn-danger btn-sm">
-                    <i class="fa-solid fa-dumpster"></i>
-                </a>
-                <a href="{% url 'edit' issue.id %}" class="card-link btn btn-success btn-sm">
-                    <i class="fa-regular fa-pen-to-square"></i>
-                </a>
-                <a href="{% url 'issue_detail' issue.id %}" class="card-link btn btn-primary btn-sm active">
-                    More
-                </a>
-                {% else %}
-                <a href="{% url 'issue_detail' issue.id %}" class="card-link btn btn-primary btn-sm active">
-                    More
-                </a>
-                {% endif %}
-            </div>
+                <div class="author-options">
+                    {% if user == issue.assignee %}
+                    <a href="#" class="btn btn-sm btn-primary">
+                        <i class="fa-regular fa-message"></i>
+                    </a>
+                    {% endif %}
+                    {% if user == issue.requester %}
+                    <a href="{% url 'delete' issue.id %}" class="btn btn-danger btn-sm">
+                        <i class="fa-solid fa-dumpster"></i>
+                    </a>
+                    <a href="{% url 'edit' issue.id %}" class="btn btn-success btn-sm">
+                        <i class="fa-regular fa-pen-to-square"></i>
+                    </a>
+                    <a href="{% url 'issue_detail' issue.id %}" class="btn btn-dark btn-sm">
+                        More
+                    </a>
+                    {% else %}
+                    <a href="{% url 'issue_detail' issue.id %}" class="btn btn-dark btn-sm">
+                        More
+                    </a>
+                    {% endif %}
+
+
+                </div>
         </div>
     </div>
     <br />

@@ -5,15 +5,16 @@ from django.urls import reverse_lazy
 from .models import Issue
 
 # Create your views here.
-# class IssueListView(ListView):
-#     template_name = "posts/issue_list.html"
-#     model = Issue
-
-#     def get_context_data(self, **kwargs): #Keyword arguments. All list views have this get_context_data() method. 
-#         context = super().get_context_data(**kwargs)
-#         # pending_status = Issue.objects.all()# The get method returns records that matched the name = "draft". you can also use it like this, .get(name="draft")
-#         context["issue_list"] = Issue.objects.all().filter().order_by("created_on").reverse()
-#         return context
+class MyIssuedListView(ListView):
+    template_name = "issues/issue_list.html"
+    model = Issue 
+    # Refer to class video for more information: FSDI 112-2 C30 @ 02hr:29min
+    def get_context_data(self, **kwargs): #Keyword arguments. All list views have this get_context_data() method. 
+        context = super().get_context_data(**kwargs) # The get method returns records that matched the name = "published". you can also use it like this, .get(name="published")
+        context["issue_list"] = Issue.objects.filter(requester=self.request.user # Ensuring that the data is returned based on the author logged in.
+                                          ).order_by("created_on"
+                                          ).reverse()
+        return context
 class IssueListView(ListView):
     template_name = "issues/issue_list.html"
     model = Issue

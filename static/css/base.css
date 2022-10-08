@@ -3,13 +3,39 @@ h2,
 h3,
 h4,
 h5,
-h6,
-.forbidden{
+h6{
     text-align: center;
     margin-top:10px;
     margin-bottom:10px;
     color: #212529;
 }
+
+.forbidden,
+.logged-out,
+.sign-in,
+.password-reset,
+.password-change{
+    width: fit-content;
+    border: solid black 1px;
+    padding: 20px;
+    text-align: center;
+    margin:10% 20%;
+    margin-bottom:10px;
+    color: #212529;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.sign-up{
+    width: fit-content;
+    border: solid black 1px;
+    padding: 20px;
+    margin:10% auto;
+    margin-bottom:10px;
+    color: #212529;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
 #daily{
     color: #2d8cff;
 }
@@ -22,14 +48,15 @@ h6,
     margin-left: 10px;
 }
 .box{
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px;
+    border: solid rgb(64, 58, 58) 1px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 #id_title,
 #id_subtitle,
 #id_author,
 #id_body, 
-#create-post {
+.create-post {
     padding: 5px;
     margin: 0px auto;
     width: 100%;
@@ -50,7 +77,7 @@ h6,
     width: 250px;
 }
 
-#id_post-container{
+#post-container{
     width: 50%;
     align-items: center;
     text-align: center;
@@ -64,11 +91,12 @@ h6,
 .author-options,
 #post-more {
     text-align: right;
+    margin: 10px 10px;
+
 }
 .post-detail{
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 10px;
-    padding: 10px;
     margin-top: 20px;
 }
 
@@ -76,3 +104,22 @@ h6,
 h5 {
     margin-bottom: 10px;
 }
+
+#issue-options{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+#status{
+    color: #212529;
+    background-color: orange;
+    text-align: center;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: xx-large;
+}
+
+

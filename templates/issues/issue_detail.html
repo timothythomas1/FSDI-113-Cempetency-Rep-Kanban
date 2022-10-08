@@ -5,28 +5,34 @@
 {% endblock title %}
 
 {% block content %}
-    <div class="post-detail">
-        <h1 id="title">{{ issue.title }}</h1>
-        <h4 id="subtitle" class="card-subtitle mb-2 text-muted">{{ issue.summary }}</h4>
-        <div id="author">
-        <div><strong>Initiated by:</strong> {{ issue.requester }} <strong>On:</strong> {{ issue.created_on }}</div>
-        <strong>Delegated to:</strong>  {{ issue.assignee }}
-        <p id="body">{{ issue.description }}</p>
-        <div class="author-options">
-            {% if user == issue.requester %}
-            <a href="{% url 'delete' issue.id %}" class="card-link btn btn-danger btn-sm">
-                <i class="fa-solid fa-dumpster"></i>
-            </a>
-            <a href="{% url 'edit' issue.id %}" class="card-link btn btn-success btn-sm">
-                <i class="fa-regular fa-pen-to-square"></i>
-            </a>
-            {% endif %}
+    <p></p>
+    <div class="card box">
+        <div id="status">({{ issue.status }})</div>
+        <div class="card-body">
+            <h1 id="title">{{ issue.title }}</h1>
+            <h4 id="subtitle" class="card-subtitle mb-2 text-muted">{{ issue.summary }}</h4>
+            <div><strong>Created by:</strong> {{ issue.requester }} <strong>On:</strong> {{ issue.created_on }}</div>
+            <strong>Assigned to:</strong>  {{ issue.assignee }}
+            <p></p>
+            <p class="card-text">{{ issue.description}}</p> {# There are more filters out there! #}
+                <div class="author-options">
+                    {% if user == issue.assignee %}
+                    <a href="#" class="btn btn-sm btn-primary">
+                        <i class="fa-regular fa-message"></i>
+                    </a>
+                    {% endif %}
+                    {% if user == issue.requester %}
+                    <a href="{% url 'delete' issue.id %}" class="btn btn-danger btn-sm">
+                        <i class="fa-solid fa-dumpster"></i>
+                    </a>
+                    <a href="{% url 'edit' issue.id %}" class="btn btn-success btn-sm">
+                        <i class="fa-regular fa-pen-to-square"></i>
+                    </a>
+                    {% endif %}
+
+                </div>
         </div>
-        {% if user == issue.assignee %}
-            <div class="author-options">
-                <a href="{% url 'delete' issue.id %}" class="card-link btn btn-danger btn-sm"><i class="fa-solid fa-dumpster"></i></a>
-                <a href="#" class="card-link btn btn-success btn-sm"><i class="fa-regular fa-pen-to-square"></i></a>
-            </div>
-        {% endif %}
     </div>
+
+
 {% endblock content %}

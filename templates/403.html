@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Forbidden
+{% endblock title %}
+
+{% block content %}
+    <div class="forbidden">
+        <h1>Forbidden (403)</h1>
+        <p>You dont have access to this page.</p>
+        <a href="{% url 'list' %}">Click here</a> to go back to all posts.
+    </div>
+{% endblock content %}
